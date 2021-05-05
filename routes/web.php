@@ -87,6 +87,8 @@ Route::post('add-member', [CensusRecordController::class, 'addMember']);
 Route::post('update-record', [CensusRecordController::class, 'updateRecord']);
 Route::post('updating', [CensusRecordController::class, 'update']);
 Route::post('update-rec', [CensusRecordController::class, 'edit']);
+Route::post('verify', [CensusRecordController::class, 'verifyCensus']);
+Route::post('verify-census', [CensusRecordController::class, 'verify']);
 
 
 Auth::routes();

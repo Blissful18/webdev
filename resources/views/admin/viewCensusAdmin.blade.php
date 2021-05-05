@@ -40,19 +40,27 @@
 
                         @if(!empty($records))
                             @foreach($records as $value)
+                                @if($value['role'] == "Head")
                     <tr>
                         <td>{{$value['record_id']}}</td>
-                        <td>{{$value['lname']}}, {{$value['fname']}}</td>
+                        <td>{{$value['lastname']}}, {{$value['firstname']}}</td>
                         <td>{{$value['address']}}</td>
-                        <td><a href="/censusRecord/{{$value['record_id']}}">View</td>
                         <td>
-                            <form action="census-delete" method="POST">
+                            <form action="census-view" method="POST">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$value['record_id']}}">
+                                <input type="submit" value="View" class="btn-info">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="census-deleteAll" method="POST">
                             @csrf
-                            <input type="hidden" name="id" value="{{$value['id']}}">
+                            <input type="hidden" name="id" value="{{$value['record_id']}}">
                             <input type="submit" value="Delete" class="btn-danger">
                             </form>
                         </td>
                     </tr>
+                                @endif
                             @endforeach
 
                         @endif

@@ -64,33 +64,11 @@
                         </td>
 
                         <td>
-                        <input type="submit" data-toggle="modal" data-target="#myModal" value="Verify" class="btn-primary">
-
-                        <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog">
-    
-                            <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h4 class="modal-title">Admin Verification</h4>
-                                    </div>
-
-                                <div class="modal-body">
-                                
-                                <form action="" method="POST">
-                                    <div class="col"><br>
-                                        <label for="formGroupExampleInput">Enter Admin Password: </label>
-                                        <input type="hidden" name="id" value="{{$value['record_id']}}">
-                                        <input type="Password" class="form-control" name="verify" placeholder="password"><br>
-                                        <input type="submit" value="verify" class="btn-primary">
-                                    </div>
-                                </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                                </div>
-      
+                            <form action="verify" method="POST">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$value['record_id']}}">
+                                <input type="submit" value="Verify" class="btn-primary">
+                            </form>   
     </div>
   </div>
                            

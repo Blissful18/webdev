@@ -219,4 +219,26 @@ class CensusRecordController extends Controller
 
         return redirect('/unverifiedCensusAdmin');
     }
+
+    public function verifyCensus(Request $request)
+    {
+        //
+        $id = $request->input('id');
+        $records = Record::all()->where('id',$id);
+        return view('/admin/verify')->with('records', $records);
+    }
+
+    public function verify(Request $request)
+    {
+        $id = $request->input('id');
+        $pass = $request->input('pass');
+
+        if($pass == "12345678"){
+            $data = Record::find($id);
+            $data->record_status = "verified";
+            $data->save();
+        }
+
+        return redirect('/unverifiedCensusAdmin');
+    }
 }

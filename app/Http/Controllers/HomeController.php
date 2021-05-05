@@ -37,13 +37,14 @@ class HomeController extends Controller
 
     public function viewCensusAdmin()
     {
-        return view('admin/viewCensusAdmin');
+        $records = CensusRecord::all();
+        return view('admin/viewCensusAdmin')->with('records',$records);
     }
 
     public function unverifiedCensusAdmin()
     {
         $records = CensusRecord::all();
-        return view('admin/unverifiedCensusAdmin')->with('records',$records);;
+        return view('admin/unverifiedCensusAdmin')->with('records',$records);
     }
 
     public function show()
