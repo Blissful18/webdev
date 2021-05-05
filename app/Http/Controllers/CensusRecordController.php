@@ -196,12 +196,29 @@ class CensusRecordController extends Controller
         //
         $id = $request->input('id');
 
-        $data = CensusRecord::all()->where('record_id',$id);
+        $data = CensusRecord::find($id);
         $data->delete();
+
+        // $record = Record::find($id);
+        // $record->delete();
+
+        return redirect('/unverifiedCensusAdmin');
+    }
+
+    public function destroyAll(Request $request)
+    {
+        //
+        $id = $request->input('id');
+
+        $data = CensusRecord::all()->where('record_id',$id);
+
+        foreach($data as $value){
+            $value->delete();
+        }
 
         $record = Record::find($id);
         $record->delete();
 
-        return redirect('/censusRecord');
+        return redirect('/unverifiedCensusAdmin');
     }
 }

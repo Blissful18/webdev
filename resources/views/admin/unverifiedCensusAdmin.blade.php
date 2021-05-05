@@ -56,7 +56,7 @@
                             </form>
                         </td>
                         <td>
-                            <form action="census-delete" method="POST">
+                            <form action="census-deleteAll" method="POST">
                             @csrf
                             <input type="hidden" name="id" value="{{$value['record_id']}}">
                             <input type="submit" value="Delete" class="btn-danger">

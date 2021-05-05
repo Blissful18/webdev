@@ -82,6 +82,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('new-rec', [CensusRecordController::class, 'store']);
 Route::post('census-view', [CensusRecordController::class, 'show']);
 Route::post('census-delete', [CensusRecordController::class, 'destroy']);
+Route::post('census-deleteAll', [CensusRecordController::class, 'destroyAll']);
 Route::post('add-member', [CensusRecordController::class, 'addMember']);
 Route::post('update-record', [CensusRecordController::class, 'updateRecord']);
 Route::post('updating', [CensusRecordController::class, 'update']);
