@@ -78,26 +78,22 @@
                                 <div class="modal-body">
                                 
                                 <form action="" method="POST">
-                                    <label>Enter Admin Password</label><br>
-                                    <input type="hidden" name="id" value="{{$value['record_id']}}">
-                                    <input type="password" name="verify" class="form-group"><br><br>
-                                    <input type="submit" value="verify" class="btn-primary">
-
+                                    <div class="col"><br>
+                                        <label for="formGroupExampleInput">Enter Admin Password: </label>
+                                        <input type="hidden" name="id" value="{{$value['record_id']}}">
+                                        <input type="Password" class="form-control" name="verify" placeholder="password"><br>
+                                        <input type="submit" value="verify" class="btn-primary">
+                                    </div>
                                 </form>
                                 </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                                </div>
       
     </div>
   </div>
-                            <form action="#" method="POST">
-                            @csrf
-
-                            <input type="hidden" name="id" value="{{$value['id']}}">
-                            
-                            </form>
+                           
                         </td>
                     </tr>
                             @endif
