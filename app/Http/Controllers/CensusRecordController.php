@@ -126,8 +126,6 @@ class CensusRecordController extends Controller
         $records = CensusRecord::all()->where('id',$id);
 
         return view('/admin/updateCensus')->with('records', $records);
-        
-        
     }
 
     /**
