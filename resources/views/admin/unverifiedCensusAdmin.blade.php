@@ -64,10 +64,39 @@
                         </td>
 
                         <td>
+                        <input type="submit" data-toggle="modal" data-target="#myModal" value="Verify" class="btn-primary">
+
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+    
+                            <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h4 class="modal-title">Admin Verification</h4>
+                                    </div>
+
+                                <div class="modal-body">
+                                
+                                <form action="" method="POST">
+                                    <label>Enter Admin Password</label><br>
+                                    <input type="hidden" name="id" value="{{$value['record_id']}}">
+                                    <input type="password" name="verify" class="form-group"><br><br>
+                                    <input type="submit" value="verify" class="btn-primary">
+
+                                </form>
+                                </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
                             <form action="#" method="POST">
                             @csrf
+
                             <input type="hidden" name="id" value="{{$value['id']}}">
-                            <input type="submit" value="Verify" class="btn-primary">
+                            
                             </form>
                         </td>
                     </tr>

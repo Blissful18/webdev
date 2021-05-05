@@ -61,7 +61,7 @@
                                 <label for="role">Household Role:</label>
                                 <select class="form-control" name="role" id="role">
                                     <option value="Head">Head</option>
-                                    </select>
+                                </select>
                             </div>
                         </div><br>
                         <label for="educational">Highest Educational Attainment:</label>
