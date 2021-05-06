@@ -27,9 +27,17 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+    <link href="/public/css/app.css" rel="stylesheet">
+    <style>
+    body{
+        background-image: url('https://i.pinimg.com/600x315/b0/2a/e2/b02ae2523a2c395bab1d7828492338bd.jpg'); 
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    </style>
+
 </head>
-<body>
+<body>  
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="background: linear-gradient(to bottom, #42E3EB 0%, #0099FF 100%);">
             <div class="container">
@@ -103,5 +111,6 @@
             @yield('content')
         </main>
     </div>
+
 </body>
 </html>

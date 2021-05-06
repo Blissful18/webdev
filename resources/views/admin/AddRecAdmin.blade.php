@@ -71,7 +71,24 @@
                         <label for="add">Address:</label>
                         <input type="text" class="form-control" name="add" placeholder="Address">
                         <br>
-                        <input type="submit" name="newRecSubmit" class="btn btn-primary">
+                        <input type="submit" name="newRecSubmit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+    
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h4 class="modal-title">Record has been Added!</h4>
+                                </div>
+                                <div class="modal-body">
+                                <p>Please check the Unverified Page</p>
+                                </div>
+                            </div>
+      
+                            </div>
+                        </div>
+  
                     </form>
                 </div>
             </div>        

@@ -24,7 +24,7 @@
                                     @csrf
                                         <label for="formGroupExampleInput">Enter Admin Password: </label>
                                         <input type="hidden" name="id" value="{{$value['id']}}">
-                                        <input type="Password" class="form-control" name="pass" placeholder="{{$value['id']}}"><br>
+                                        <input type="Password" class="form-control" name="pass" placeholder="Password"><br>
                                         <input type="submit" value="Verify" class="btn-primary">
                                 </form>
                             @endforeach
