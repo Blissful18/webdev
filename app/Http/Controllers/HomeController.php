@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\CensusRecord;
+use App\Models\Record;
 
 
 class HomeController extends Controller
@@ -37,13 +38,32 @@ class HomeController extends Controller
 
     public function viewCensusAdmin()
     {
-        $records = CensusRecord::all();
+        $data = Record::all()->where('record_status','verified');
+        $census = CensusRecord::all();
+        $records = [];
+        foreach($data as $value){
+            foreach($census as $value2){
+                if($value2->record_id == $value->id){
+                    array_push($records,$value2);
+                }
+            }
+        }
+
         return view('admin/viewCensusAdmin')->with('records',$records);
     }
 
     public function unverifiedCensusAdmin()
     {
-        $records = CensusRecord::all();
+        $data = Record::all()->where('record_status','unverified');
+        $census = CensusRecord::all();
+        $records = [];
+        foreach($data as $value){
+            foreach($census as $value2){
+                if($value2->record_id == $value->id){
+                    array_push($records,$value2);
+                }
+            }
+        }
         return view('admin/unverifiedCensusAdmin')->with('records',$records);
     }
 
