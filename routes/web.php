@@ -16,17 +16,12 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Route::get('/landing', [ViewController::class, 'landing']);
 
 Route::get('/admin', [ViewController::class, 'home']);
 
 Route::resource('/censusRecord', CensusRecordController::class);
 
 Route::get('/user', [ViewController::class, 'userLanding']);
-
-// Route::get('/AddRecAdmin', function () {
-//     return view('admin/AddRecAdmin');
-// });
 
 Route::get('/censusRec', function () {
     return view('admin/censusRec');
@@ -43,19 +38,6 @@ Route::get('/updateCensus', function () {
 Route::get('/censusDetail', function () {
     return view('admin/censusDetail');
 });
-
-
-// Route::get('/users', function () {
-//     return view('admin/users');
-// });
-
-// Route::get('/viewCensusAdmin', function () {
-//     return view('admin/viewCensusAdmin');
-// });
-
-// Route::get('/unverifiedCensusAdmin', function () {
-//     return view('admin/unverifiedCensusAdmin');
-// });
 
 Route::get('/addAccount', function () {
     return view('admin/addAccount');

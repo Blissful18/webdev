@@ -14,7 +14,7 @@
                     <hr class="bg-info my-4">
 
                     <div align="right">
-                    <form action="searchUnverified" method='GET'>
+                    <form action="search-unverified" method='GET'>
                         @csrf
                         <input type="text" name='searchUnverified' placeholder="Search Record">
                         <input type="submit" name='searchUnverified' class="btn-primary" placeholder="Search">

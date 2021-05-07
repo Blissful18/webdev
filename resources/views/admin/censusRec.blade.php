@@ -11,14 +11,19 @@
                     <div class="bg-info"><br>
                     <h4 class="row justify-content-center">Census Record No.</h4><br>
                     </div>
-                    <hr class="my-4">
-                    
                     @if(!empty($records))
                             @foreach($records as $value)
-                    <div align="right">
-                    @if($value['role'] == "Head")
-                      
+                            @if($value['role'] == "Head")
+                    
+                    <hr class="my-4">
+                    <div align="right" style="margin-top: 20px;">
+                        <form action="add-member" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" value="{{$value['record_id']}}">
+                            <input type="submit" value="Add member" class="btn-info">
+                        </form>
                     </div>
+                    
                 </div>
                 <div class="table-responsive" style="margin-right:20px; margin-left:20px;">
                     <table class="table table-striped">
