@@ -13,10 +13,10 @@
                     </div>
                     <hr class="bg-info my-4">
                     <div align="right">
-                    <form action="searchVerified" method='GET'>
+                    <form action="search-verified" method='POST'>
                         @csrf
-                        <input type="text" name='searcVerified' placeholder="Search Record">
-                        <input type="submit" name='searchVerified' class="btn-primary">
+                        <input type="text" name='search' placeholder="Search Record">
+                        <input type="submit" name='searchVerified' value="Search" class="btn-primary">
                     </form>
                     </div>  
                 </div>

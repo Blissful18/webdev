@@ -241,4 +241,54 @@ class CensusRecordController extends Controller
 
         return redirect('/unverifiedCensusAdmin');
     }
+
+    public function searchUnverified(Request $request){
+        $input = $request->input('search');
+        $data = Record::all()->where('record_status','unverified');
+        $census = CensusRecord::all();
+        $records2 = [];
+        foreach($data as $value){
+            foreach($census as $value2){
+                if($value2->record_id == $value->id){
+                    array_push($records2,$value2);
+                }
+            }
+        }
+
+        $records = [];
+        foreach($records2 as $value3){
+            if(is_string($input) == 1 && strtolower($value3->lastname) == strtolower($input)){
+                array_push($records,$value3);
+            }else if($value3->record_id == $input){
+                array_push($records,$value3);
+            }
+        }
+
+        return view('admin/unverifiedCensusAdmin')->with('records',$records);
+    }
+
+    public function searchVerified(Request $request){
+        $input = $request->input('search');
+        $data = Record::all()->where('record_status','verified');
+        $census = CensusRecord::all();
+        $records2 = [];
+        foreach($data as $value){
+            foreach($census as $value2){
+                if($value2->record_id == $value->id){
+                    array_push($records2,$value2);
+                }
+            }
+        }
+
+        $records = [];
+        foreach($records2 as $value3){
+            if(is_string($input) == 1 && strtolower($value3->lastname) == strtolower($input)){
+                array_push($records,$value3);
+            }else if($value3->record_id == $input){
+                array_push($records,$value3);
+            }
+        }
+
+        return view('admin/viewCensusAdmin')->with('records',$records);
+    }
 }

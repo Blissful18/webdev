@@ -71,6 +71,8 @@ Route::post('updating', [CensusRecordController::class, 'update']);
 Route::post('update-rec', [CensusRecordController::class, 'edit']);
 Route::post('verify', [CensusRecordController::class, 'verifyCensus']);
 Route::post('verify-census', [CensusRecordController::class, 'verify']);
+Route::post('search-unverified', [CensusRecordController::class, 'searchUnverified']);
+Route::post('search-verified', [CensusRecordController::class, 'searchVerified']);
 
 
 Auth::routes();
